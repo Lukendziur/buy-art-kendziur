@@ -3,7 +3,7 @@ import Button from "react-bootstrap/Button";
 import Card from "react-bootstrap/Card";
 import Stack from "react-bootstrap/Stack";
 
-const ItemCount = ({ stock, initial, onAdd }) => {
+const ItemCount = ({ stock, initial, onAdd, noStock }) => {
   const [count, setCount] = useState(initial);
   const incrementar = () => {
     setCount(count + 1);
@@ -34,7 +34,8 @@ const ItemCount = ({ stock, initial, onAdd }) => {
            style={{ marginTop: "10px", width: '100%' }}
             variant="outline-info"
             onClick={() => {
-              count <= stock && onAdd(count);
+            //   count <= stock && onAdd(count);
+            count <= stock ? onAdd(count) : noStock()
             }}
           >
             Agregar al carrito

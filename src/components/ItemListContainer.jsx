@@ -6,9 +6,8 @@ const ItemListContainer = ({greeting}) =>{
     return(
         <>
         {greeting}
-        <ItemCount stock={5} initial={1} onAdd={(n) => toast.success(`${n} imágenes agregadas!`)
+        <ItemCount stock={5} initial={1} onAdd={(n) => toast.success(`${n} imágenes agregadas!`)} noStock={() => toast.error(`El stock supera la cantidad de unidades`)}   />
         
-        }/>
   <ToastContainer />
         </>
     )
